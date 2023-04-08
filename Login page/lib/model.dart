@@ -7,23 +7,11 @@ class User {
   String userLastName;
   int userAge;
   String userEmail;
-  String userPhone;
-  String userAdress;
-  int userGroup;
   String userGender;
-  String userMerriage;
+  String password;
 
-  User(
-      this.id,
-      this.userFirstName,
-      this.userLastName,
-      this.userAge,
-      this.userEmail,
-      this.userPhone,
-      this.userAdress,
-      this.userGroup,
-      this.userGender,
-      this.userMerriage);
+  User(this.id, this.userFirstName, this.userLastName, this.userAge,
+      this.userEmail, this.userGender, this.password);
 }
 
 // List users = <User>[];

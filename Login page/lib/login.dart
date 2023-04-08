@@ -6,9 +6,9 @@ import 'printInfo.dart';
 List users = <User>[];
 void add() {
   users.add(User(1, "Arsen", "Kenjegulov", 21, "arsen.kenjegulov.bj@gmail.com",
-      "0706 584 681", "Talas", 2, "male", "don't married"));
+      "male", "12345"));
   users.add(User(2, "Arnas", "Shirgeliev", 13, "arnas.shirgeliev.bj@gmail.com",
-      "0551 551 785", "Talas", 0, "male", "don't married"));
+      "male", "12345"));
 }
 
 class LoginPage extends StatefulWidget {
@@ -20,12 +20,12 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String? name;
-  String? email;
+  String? password;
 
   User? findNameAndEmail(String name, String email) {
     add();
     for (User user in users) {
-      if (user.userFirstName == name && user.userEmail == email) return user;
+      if (user.userFirstName == name && user.password == password) return user;
     }
     return null;
   }
@@ -75,13 +75,13 @@ class _LoginPageState extends State<LoginPage> {
               child: TextFormField(
                 style: const TextStyle(color: Colors.black),
                 decoration: const InputDecoration(
-                  icon: Icon(Icons.email),
+                  icon: Icon(Icons.password),
                   border: OutlineInputBorder(),
-                  labelText: "Gmail",
+                  labelText: "Password",
                 ),
                 onChanged: (String? value) {
                   setState(() {
-                    email = value;
+                    password = value;
                   });
                 },
               ),
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                       minimumSize: const Size(150, 30),
                       backgroundColor: Colors.blue),
                   onPressed: () {
-                    User? user1 = findNameAndEmail(name!, email!);
+                    User? user1 = findNameAndEmail(name!, password!);
                     if (user1 != null) {
                       // Навигация кийинки бетке
                       Navigator.push(
@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text(
-                            "ERROR! Your name or email is not correct!",
+                            "ERROR! Your name or password is not correct!",
                             style: TextStyle(color: Colors.red),
                           ),
                         ),

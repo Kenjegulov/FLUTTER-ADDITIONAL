@@ -48,24 +48,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
               icon: Icon(Icons.email),
             ),
             const NewPadding(
-              word: "phone",
-              icon: Icon(Icons.phone),
-            ),
-            const NewPadding(
-              word: "address",
-              icon: Icon(Icons.place),
-            ),
-            const NewPadding(
-              word: "group",
-              icon: Icon(Icons.people_alt),
-            ),
-            const NewPadding(
               word: "gender",
-              icon: Icon(Icons.person_2_outlined),
+              icon: Icon(Icons.person_pin_circle),
             ),
             const NewPadding(
-              word: "merriage",
-              icon: Icon(Icons.abc_outlined),
+              word: "password",
+              icon: Icon(Icons.password),
             ),
             Column(
               children: [
