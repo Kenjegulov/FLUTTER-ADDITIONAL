@@ -1,6 +1,8 @@
 // import 'dart:math';
 // import 'package:flutter/material.dart';
 
+import 'dart:math';
+
 class User {
   int id;
   String userFirstName;
@@ -8,10 +10,43 @@ class User {
   int userAge;
   String userEmail;
   String userGender;
-  String password;
+  String userPassword;
+  String userImage;
+
+  void setiId(int id) {
+    this.id = id;
+  }
+
+  void setFirstName(String name) {
+    userFirstName = name;
+  }
+
+  void setLastName(String surName) {
+    userLastName = surName;
+  }
+
+  void setAge(int age) {
+    userAge = age;
+  }
+
+  void setEmail(String email) {
+    userEmail = email;
+  }
+
+  void setGender(String gender) {
+    userGender = gender;
+  }
+
+  void setPassword(String password) {
+    userPassword = password;
+  }
+
+  void setImage(String image) {
+    userImage = image;
+  }
 
   User(this.id, this.userFirstName, this.userLastName, this.userAge,
-      this.userEmail, this.userGender, this.password);
+      this.userEmail, this.userGender, this.userPassword, this.userImage);
 }
 
 // List users = <User>[];

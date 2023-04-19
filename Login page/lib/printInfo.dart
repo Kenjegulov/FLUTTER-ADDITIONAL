@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lesson6/column.dart';
+import 'editUser.dart';
 import 'model.dart';
 
 // ignore: must_be_immutable
@@ -26,6 +27,10 @@ class PrintInfo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            CircleAvatar(
+              backgroundImage: NetworkImage(user.userImage),
+              radius: 100,
+            ),
             Text(
               "${user.userFirstName.toUpperCase()} ${user.userLastName.toUpperCase()}",
               style: const TextStyle(color: Colors.greenAccent, fontSize: 30),
@@ -33,7 +38,24 @@ class PrintInfo extends StatelessWidget {
             SetColumn(word: "User age", value: "${user.userAge}"),
             SetColumn(word: "User email", value: user.userEmail),
             SetColumn(word: "User gender", value: user.userGender),
-            SetColumn(word: "User merriage", value: user.password),
+            SetColumn(word: "User merriage", value: user.userPassword),
+            const SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    // Экинчи баракты чакыруу
+                    builder: (context) => EditUser(
+                      user: user,
+                    ),
+                  ),
+                );
+              },
+              child: const Text("Edit"),
+            ),
           ],
         ),
       ),

@@ -5,10 +5,25 @@ import 'printInfo.dart';
 
 List users = <User>[];
 void add() {
-  users.add(User(1, "Arsen", "Kenjegulov", 21, "arsen.kenjegulov.bj@gmail.com",
-      "male", "12345"));
-  users.add(User(2, "Arnas", "Shirgeliev", 13, "arnas.shirgeliev.bj@gmail.com",
-      "male", "12345"));
+  users.add(User(
+      1,
+      "Arsen",
+      "Kenjegulov",
+      21,
+      "arsen.kenjegulov.bj@gmail.com",
+      "male",
+      "12345",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGU2lKvwUrb4H3sY2jaEv0CerARq1jvrw7F1U8EiY&s"));
+  users.add(User(
+    2,
+    "Arnas",
+    "Shirgeliev",
+    13,
+    "arnas.shirgeliev.bj@gmail.com",
+    "male",
+    "12345",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGU2lKvwUrb4H3sY2jaEv0CerARq1jvrw7F1U8EiY&s",
+  ));
 }
 
 class LoginPage extends StatefulWidget {
@@ -25,7 +40,9 @@ class _LoginPageState extends State<LoginPage> {
   User? findNameAndEmail(String name, String email) {
     add();
     for (User user in users) {
-      if (user.userFirstName == name && user.password == password) return user;
+      if (user.userFirstName == name && user.userPassword == password) {
+        return user;
+      }
     }
     return null;
   }
