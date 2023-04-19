@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:extract/components/containerWidget.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -10,7 +11,14 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+final player = AudioPlayer();
+
 class _MyHomePageState extends State<MyHomePage> {
+  void play(AudioPlayer audioPlayer) async {
+    await player.stop();
+    player.play(AssetSource("${audioPlayer}.mp3"));
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
